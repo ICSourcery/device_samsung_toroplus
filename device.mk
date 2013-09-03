@@ -22,13 +22,13 @@ DEVICE_PACKAGE_OVERLAYS := device/samsung/toroplus/overlay
 
 PRODUCT_COPY_FILES += \
 	device/samsung/toroplus/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
+	device/samsung/toroplus/smc_pa_wvdrm.ift:system/vendor/firmware/smc_pa_wvdrm.ift \
+	device/samsung/toroplus/smc_normal_world_android_cfg.ini:system/vendor/etc/smc_normal_world_android_cfg.ini \
+	device/samsung/toroplus/wmdsi:system/bin/wmdsi \
 	frameworks/native/data/etc/android.hardware.telephony.cdma.xml:system/etc/permissions/android.hardware.telephony.cdma.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.config.vc_call_vol_steps=7
-
-PRODUCT_PACKAGES := \
-	CellBroadcastReceiver
 
 $(call inherit-product, device/samsung/tuna/device.mk)
 $(call inherit-product-if-exists, vendor/samsung/toroplus/device-vendor.mk)

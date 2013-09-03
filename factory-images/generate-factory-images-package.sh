@@ -1,4 +1,6 @@
-# Copyright (C) 2010 The Android Open Source Project
+#!/bin/sh
+
+# Copyright 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,15 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Samsung blob(s) necessary for ToroPlus hardware
-PRODUCT_PACKAGES := \
-    BIP \
-    SDM \
-    SecPhone \
-    SyncMLSvc \
-    fRom \
-    libsecril-client \
-    libsyncml_core \
-    libsyncml_port \
-    lib_gsd4t \
-    libsec-ril_lte
+source ../../../common/clear-factory-images-variables.sh
+PRODUCT=toroplus
+DEVICE=toroplus
+BUILD=fh05
+VERSION=fh05
+SRCPREFIX=signed-
+BOOTLOADER=primelc03
+BOOTLOADERFILE=bootloader-toroplus.img
+RADIO=l700.fc12
+RADIOFILE=radio-toroplus.img
+CDMARADIO=l700.fc12
+CDMARADIOFILE=radio-cdma-toroplus.img
+source ../../../common/generate-factory-images-common.sh
